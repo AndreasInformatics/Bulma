@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Der Bulma Taschenrechner</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+	<script src="main.js"></script>
+
+	<nav class="navbar" role="navigation">
+		<div class="navbar-brand">
+			<a class="navbar-brand" href="#">
+				<img class="img-fluid" src="logo.png" alt="Responsive image">
+			</a>
+			<a role="button" class="navbar-burger">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+		<div id="navbarBasicExample" class="navbar-menu">
+			<div class="navbar-end">
+				<a class="navbar-item">Home</a>
+				<a class="navbar-item">Lernplan</a>
+				<a class="navbar-item">Übungen</a>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<div class="headline is-size-2">
+		<h1>Der Ultimative Taschenrechner</h1>
+	</div>
+	<br>
+	<div id="taschenrechner">
+		<div id="display">
+			<div class="inner">
+				<output id="betrag">0</output>
+			</div>
+		</div>
+		<div id="ziffern">
+			<table>
+				<tr>
+				<td><button onclick="buildNumber(1)" class="button">1</button></td>
+				<td><button onclick="buildNumber(2)" class="button">2</button></td>
+				<td><button onclick="buildNumber(3)" class="button">3</button></td>
+				<td class="leerzeile"></td>
+				<td><button onclick="buildNumber('+')" class="button funk-plus" >+</button></td>
+				<td><button onclick="buildNumber('-')" class="button funk-minus">-</button></td>
+				<td><button onclick="buildNumber('÷')" class="button funk-durch">÷</button></td>
+				<td><button onclick="buildNumber('×')" class="button funk-mal">×</button></td>
+				</tr>
+				<tr>
+				<td><button onclick="buildNumber(4)" class="button">4</button></td>
+				<td><button onclick="buildNumber(5)" class="button">5</button></td>
+				<td><button onclick="buildNumber(6)" class="button">6</button></td>
+				<td class="leerzeile"></td>
+				<td><button onclick="buildNumber('√x')" class="button funk-wurzel">√x</button></td>
+				<td><button onclick="buildNumber('!')" class="button funk-fakultat">n!</button></td>
+				<td><button onclick="buildNumber('π')" class="button funk-pi">&pi;</button></td>
+				<td><button onclick="buildNumber('e')" class="button funk-e">e</button></td>
+				</tr>
+				<tr>
+				<td><button onclick="buildNumber(7)" class="button">7</button></td>
+				<td><button onclick="buildNumber(8)" class="button">8</button></td>
+				<td><button onclick="buildNumber(9)" class="button">9</button></td>
+				<td class="leerzeile"></td>
+				<td><button onclick="buildNumber('²')" class="button funk-quadrat">x&sup2;</button></td>
+				<td><button onclick="buildNumber('log')" class="button funk-logarithmus">log</button></td>
+				<td><button onclick="buildNumber('(')" class="button funk-klammer-links">(</button></td>
+				<td><button onclick="buildNumber(')')" class="button funk-klammer-rechts">)</button></td>
+				</tr>
+				<tr>
+				<td><button onclick="buildNumber('.')" class="button">.</button></td>
+				<td><button onclick="buildNumber(0)" class="button">0</button></td>
+				<td><button onclick="buildNumber('=')" class="button">=</button></td>
+				<td class="leerzeile"></td>
+				<td><button onclick="buildNumber('C')" class="button funk-delete-all">C</button></td>
+				<td><button onclick="buildNumber('⌫')" class="button funk-delete-last">&#9003;</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br>
+	<div class="headlineRules is-size-4">
+		<h3>Achtung! Regeln für den Taschenrechner:</h3>
+	</div>
+	<div class ="ruleText">
+		<p>- Nur normale Rechnungen sind erlaubt. Eine sinnlose Eingabe führt auch zu keinem richtigen Ergebnis.</p>
+		<p>- Bei Sonderrechnungen wie: √x, n!, log oder x&sup2; muss zuerst die Zahl eingegeben werden und dann die Sonderrechnungs-Zeichen.</p>
+		<p>- In Version 1.0.0 dürfen nicht mehrere Klammern in einer anderen Klammer verschachtelt sein. Eine Klammer muss geöffnet und wieder geschlossen werden, bevor eine neue Klammer geöffnet werden kann.</p>
+		<p>- Hin und Wieder kommt es bei langen Komma-Zahlen vor, dass 0,000000002 addiert wird. Dies wird in Version 1.0.1 behoben.</p>
+		<p>- Mehrere Sonderzeichen hintereinander führen zu keinem sinnvollen Ergebnis. Um zwei Sonderzeichen hintereinander zu benutzen müssen Klammern verwendet werden.</p>
+	</div>
+	<br>
+</body>
+<footer class="page-footer">
+		<div class="container">
+			<div class="columns is-multiline is-mobile">
+				<div class="column is-tree-quarter">
+					<h6 class="is-uppercase has-text-weight-bold">Impressum</h6>
+					<p>Informationspflicht laut § 5 TMG.</p><br>
+					<p>UID-Nummer: DE969425<br>Wirtschafts-ID: DE847103852<br>Register: Handelsregister<br>Registernummer: HRB 030030<br>Registergericht: Registergericht Frankfurt</p><br>
+					<p>Aufsichtsbehörde:<br>Bezirkshauptmannschaft Frankfurt<br>Webseite der Aufsichtsbehörde: https://www.aufsichtsbeoerde-frankfurt.de/<br>Anschrift der Aufsichtsbehörde: Kaiserstraße 1, 40556 Frankfurt</p><br>
+					<p>Geschäftsführer: Andreas Graubner</p>
+				</div>
+				<div class="column is-one-quarter">
+					<h6 class="is-uppercase has-text-weight-bold">Kontakt</h6>
+					<p>MyCalc<br>Oldenhauerplatz 5, Stiege 1 Tür 6<br>16789 Frankfurt<br>Deutschland<br><br>Tel.: 01694568348<br>Fax: 01694568348-1<br>E-Mail: Anfrage@MyCalc.de</p>
+				</div>
+			</div>
+		<div class="footer-copyright has-text-centered">© 2020 Copyright: MyCalc.de</div>
+	</footer>
+</html>
